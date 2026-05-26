@@ -15,6 +15,9 @@ tr:hover{background:#fafafa}
 .dot.green{background:#34c759;box-shadow:0 0 0 3px rgba(52,199,89,.2)}
 .dot.yellow{background:#ffcc00;box-shadow:0 0 0 3px rgba(255,204,0,.2)}
 .dot.grey{background:#c7c7cc}
+.dot-btn{background:none;border:none;padding:6px;cursor:pointer;border-radius:50%;line-height:0}
+.dot-btn:hover{background:#eee}
+.dot-btn:active{transform:scale(.9)}
 .ampel{width:30px;text-align:center}
 .art{font-weight:600;font-family:ui-monospace,monospace;width:80px}
 .status{color:#6e6e73;font-size:13px;width:160px}
@@ -27,17 +30,18 @@ tr:hover{background:#fafafa}
 </style></head>
 <body>
 <h1>🏷️ Domus Lager – Arbeitsaufträge</h1>
-<div class="sub">Übersicht aller 16 Artikel. „Arbeitsauftrag" lädt das PDF zum Ausdrucken, „Gerätedoku" zeigt den aktuellen Stand.</div>
+<div class="sub">Übersicht aller 16 Artikel. Klick auf die Ampel schaltet zwischen automatisch (KI-Check) und „Geprüft" um. Die Einstellung wird in diesem Browser gespeichert.</div>
 <div class="legend">
   <span><span class="dot green"></span> Geprüft</span>
   <span><span class="dot yellow"></span> KI-Vorschläge offen</span>
   <span><span class="dot grey"></span> Keine Doku</span>
+  <span style="margin-left:auto"><button id="reset" style="background:none;border:1px solid #d2d2d7;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;color:#6e6e73">Alle zurücksetzen</button></span>
 </div>
 <table>
   <thead><tr><th></th><th>Artikel</th><th>Marke / Modell</th><th>Status</th><th>Aktionen</th></tr></thead>
   <tbody>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-001DAH" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-001DAH</td>
           <td>Berbel Skyline Edge Base BIH 120 SKE-B permalyt®</td>
           <td class="status">11 KI-Felder offen</td>
@@ -46,8 +50,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-001DAH.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-002SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-002SPÜ</td>
           <td>BLANCO ANDANO</td>
           <td class="status">11 KI-Felder offen</td>
@@ -56,8 +60,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-002SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-003SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-003SPÜ</td>
           <td>BLANCO CLARON 180-U</td>
           <td class="status">9 KI-Felder offen</td>
@@ -66,8 +70,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-003SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-004MÜL" data-auto-ampel="yellow" data-auto-status="8 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-004MÜL</td>
           <td>BLANCO SELECT II Compact 60/2</td>
           <td class="status">8 KI-Felder offen</td>
@@ -76,8 +80,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-004M%C3%9CL.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-005SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-005SPÜ</td>
           <td>FRANKE Sirius S2D 611-62-NTH</td>
           <td class="status">11 KI-Felder offen</td>
@@ -86,8 +90,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-005SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-006SPÜ" data-auto-ampel="yellow" data-auto-status="10 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-006SPÜ</td>
           <td>FRANKE (KI) GAX 40 (KI)</td>
           <td class="status">10 KI-Felder offen</td>
@@ -96,8 +100,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-006SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-007SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-007SPÜ</td>
           <td>FRANKE KBG 210-50</td>
           <td class="status">9 KI-Felder offen</td>
@@ -106,8 +110,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-007SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-008SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-008SPÜ</td>
           <td>FRANKE Sirius S2D 611-62 Carbon</td>
           <td class="status">11 KI-Felder offen</td>
@@ -116,8 +120,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-008SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-009MÜL" data-auto-ampel="yellow" data-auto-status="7 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-009MÜL</td>
           <td>FRANKE Sorter 422</td>
           <td class="status">7 KI-Felder offen</td>
@@ -126,8 +130,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-009M%C3%9CL.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-010SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-010SPÜ</td>
           <td>hansgrohe S719-U500</td>
           <td class="status">9 KI-Felder offen</td>
@@ -136,8 +140,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-010SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-011DRU" data-auto-ampel="yellow" data-auto-status="2 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-011DRU</td>
           <td>Imperial-Werke EGLA 2662</td>
           <td class="status">2 KI-Felder offen</td>
@@ -146,8 +150,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-011DRU.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-012DAH" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-012DAH</td>
           <td>Miele DAD 4940 Black Levantar</td>
           <td class="status">9 KI-Felder offen</td>
@@ -156,8 +160,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-012DAH.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-013DAH" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-013DAH</td>
           <td>Miele CSDA 1000 EDST</td>
           <td class="status">9 KI-Felder offen</td>
@@ -166,8 +170,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-013DAH.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-014DAH" data-auto-ampel="yellow" data-auto-status="8 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-014DAH</td>
           <td>Miele DMK 150-1</td>
           <td class="status">8 KI-Felder offen</td>
@@ -176,8 +180,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-014DAH.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-015ZÜB" data-auto-ampel="yellow" data-auto-status="5 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-015ZÜB</td>
           <td>Miele DUU 1000-2 UBS Umluft</td>
           <td class="status">5 KI-Felder offen</td>
@@ -186,8 +190,8 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-015Z%C3%9CB.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr>
-          <td class="ampel"><span class="dot yellow"></span></td>
+        <tr data-art="K-016ZÜB" data-auto-ampel="yellow" data-auto-status="7 KI-Felder offen" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-016ZÜB</td>
           <td>Miele CSZL 1500 2er Pack EDST</td>
           <td class="status">7 KI-Felder offen</td>
@@ -197,5 +201,37 @@ tr:hover{background:#fafafa}
           </td>
         </tr></tbody>
 </table>
-<div class="foot">Letztes Build: 26.05.2026 03:51</div>
+<div class="foot">Letztes Build: 26.05.2026 03:57</div>
+<script>
+const KEY='domus-geprueft-v1';
+function load(){ try{ return new Set(JSON.parse(localStorage.getItem(KEY)||'[]')); }catch(e){ return new Set(); } }
+function save(s){ localStorage.setItem(KEY, JSON.stringify([...s])); }
+function render(){
+  const set = load();
+  document.querySelectorAll('tr[data-art]').forEach(tr=>{
+    const art = tr.dataset.art;
+    const dot = tr.querySelector('.dot');
+    const st  = tr.querySelector('.status');
+    if(set.has(art)){
+      dot.className = 'dot green';
+      st.textContent = 'Geprüft (manuell)';
+    }else{
+      dot.className = 'dot ' + tr.dataset.autoAmpel;
+      st.textContent = tr.dataset.autoStatus;
+    }
+  });
+}
+document.querySelectorAll('.dot-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const tr = btn.closest('tr'); const art = tr.dataset.art;
+    const set = load();
+    if(set.has(art)) set.delete(art); else set.add(art);
+    save(set); render();
+  });
+});
+document.getElementById('reset').addEventListener('click', ()=>{
+  if(confirm('Alle manuellen Häkchen entfernen?')){ localStorage.removeItem(KEY); render(); }
+});
+render();
+</script>
 </body></html>
