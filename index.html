@@ -48,6 +48,14 @@ tr.ps1>td:first-child{border-left:3px solid #ffc107}
 tr.ps2>td:first-child{border-left:3px solid #0d6efd}
 tr.ps3>td:first-child{border-left:3px solid #198754}
 tr.ps4>td:first-child{border-left:3px solid #dc3545}
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:20px;background:white;padding:12px 16px;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+#q{border:1px solid #d2d2d7;border-radius:8px;padding:7px 12px;font-size:13px;outline:none;min-width:140px;flex:1 1 140px}#q:focus{border-color:#0071e3}
+.fb-group{display:flex;flex-wrap:wrap;gap:4px}
+.fb{background:#f2f2f7;border:none;border-radius:6px;padding:5px 10px;font-size:12px;cursor:pointer;color:#1d1d1f;white-space:nowrap}
+.fb:hover{background:#e5e5ea}.fb.active{background:#0071e3;color:white}
+.fb-cnt{font-weight:400;opacity:.65;margin-left:3px;font-size:11px}
+.vis-info{font-size:13px;color:#6e6e73;margin-left:auto;white-space:nowrap}
+.csv-btn{background:#f2f2f7;border:none;border-radius:8px;padding:7px 12px;font-size:13px;cursor:pointer;color:#1d1d1f}.csv-btn:hover{background:#e5e5ea}
 </style></head>
 <body>
 <h1>🏷️ Domus Lager – Arbeitsaufträge</h1>
@@ -57,6 +65,13 @@ tr.ps4>td:first-child{border-left:3px solid #dc3545}
   <span><span class="dot yellow"></span> KI-Vorschläge offen</span>
   <span><span class="dot grey"></span> Keine Doku</span>
   <span style="margin-left:auto"><button id="reset" style="background:none;border:1px solid #d2d2d7;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;color:#6e6e73">Alle zurücksetzen</button></span>
+</div>
+<div class="filter-bar">
+  <input id="q" type="search" placeholder="🔍 Suchen …" oninput="filterTable()">
+  <div class="fb-group"><button class="fb fb-typ" onclick="setFilter('typ','DAH',this)">DAH<span class="fb-cnt">4</span></button><button class="fb fb-typ" onclick="setFilter('typ','DRU',this)">DRU<span class="fb-cnt">1</span></button><button class="fb fb-typ" onclick="setFilter('typ','MÜL',this)">MÜL<span class="fb-cnt">2</span></button><button class="fb fb-typ" onclick="setFilter('typ','SPÜ',this)">SPÜ<span class="fb-cnt">7</span></button><button class="fb fb-typ" onclick="setFilter('typ','ZÜB',this)">ZÜB<span class="fb-cnt">2</span></button></div>
+  <div class="fb-group"><button class="fb fb-vkst" onclick="setFilter('vkst','1',this)">Erfassung<span class="fb-cnt">16</span></button></div>
+  <span class="vis-info"><span id="vis-cnt">16</span>&thinsp;/&thinsp;16 Artikel</span>
+  <button class="csv-btn" onclick="exportCSV()">📥 CSV</button>
 </div>
 <div class="stats">
   <div class="stat-card"><div class="stat-val">16</div><div class="stat-lbl">Artikel gesamt</div></div>
@@ -76,7 +91,215 @@ tr.ps4>td:first-child{border-left:3px solid #dc3545}
 <div class="tbl-wrap">
 <table>
   <thead><tr><th></th><th>Artikel</th><th>Marke / Modell</th><th>Neupreis</th><th>Marktpreis (gebraucht)</th><th>Verkauf</th><th>KI-Check</th><th>Aktionen</th></tr></thead>
-  <tbody>{''.join(rows_html)}</tbody>
+  <tbody>
+        <tr data-art="K-001DAH" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="DAH" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-001DAH</td>
+          <td>Berbel Skyline Edge Base BIH 120 SKE-B permalyt®</td>
+          <td class="preis">Haube 7.803,00 € · Deckeneinheit 2.178,00 €</td>
+          <td class="preis">Haube ca. 3.859 € · Deckeneinheit 1.869,00–2.038,70 €</td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">11 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-001DAH.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-001DAH.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-002SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-002SPÜ</td>
+          <td>BLANCO ANDANO</td>
+          <td class="preis">508,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">Neu ca. 400–500 €</td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">11 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-002SP%C3%9C.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-002SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-003SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-003SPÜ</td>
+          <td>BLANCO CLARON 180-U</td>
+          <td class="preis">320,96 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 250–320 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">9 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-003SP%C3%9C.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-003SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-004MÜL" data-auto-ampel="yellow" data-auto-status="8 KI-Felder offen" data-typ="MÜL" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-004MÜL</td>
+          <td>BLANCO SELECT II Compact 60/2</td>
+          <td class="preis">199,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 120–170 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">8 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-004M%C3%9CL.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-004M%C3%9CL.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-005SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-005SPÜ</td>
+          <td>FRANKE Sirius S2D 611-62-NTH</td>
+          <td class="preis">189,50–230,90 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 190–225 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">11 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-005SP%C3%9C.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-005SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-006SPÜ" data-auto-ampel="yellow" data-auto-status="10 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-006SPÜ</td>
+          <td>FRANKE GAX 40</td>
+          <td class="preis">149,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 137,90–293,18 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">10 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-006SP%C3%9C.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-006SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-007SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-007SPÜ</td>
+          <td>FRANKE KBG 210-50</td>
+          <td class="preis">309,00–575,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 280–330 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">9 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-007SP%C3%9C.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-007SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-008SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-008SPÜ</td>
+          <td>FRANKE Sirius S2D 611-62 Carbon</td>
+          <td class="preis">189,50–245,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 200–240 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">11 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-008SP%C3%9C.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-008SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-009MÜL" data-auto-ampel="yellow" data-auto-status="7 KI-Felder offen" data-typ="MÜL" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-009MÜL</td>
+          <td>FRANKE Sorter 422</td>
+          <td class="preis">142,48–226,90 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 145–205 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">7 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-009M%C3%9CL.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-009M%C3%9CL.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-010SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-010SPÜ</td>
+          <td>hansgrohe S719-U500</td>
+          <td class="preis">385,95–771,24 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 385–515 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">9 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-010SP%C3%9C.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-010SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-011DRU" data-auto-ampel="yellow" data-auto-status="2 KI-Felder offen" data-typ="DRU" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-011DRU</td>
+          <td>Imperial-Werke EGLA 2662</td>
+          <td class="preis">nicht belastbar ermittelbar</td>
+          <td class="preis">nicht belastbar ermittelbar</td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">2 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-011DRU.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-011DRU.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-012DAH" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="DAH" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-012DAH</td>
+          <td>Miele DAD 4940 Black Levantar</td>
+          <td class="preis">2.391,00–2.639,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 2.400–2.650 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">9 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-012DAH.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-012DAH.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-013DAH" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="DAH" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-013DAH</td>
+          <td>Miele CSDA 1000 EDST</td>
+          <td class="preis">nicht belastbar ermittelbar</td>
+          <td class="preis">nicht belastbar ermittelbar</td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">9 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-013DAH.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-013DAH.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-014DAH" data-auto-ampel="yellow" data-auto-status="8 KI-Felder offen" data-typ="DAH" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-014DAH</td>
+          <td>Miele DMK 150-1</td>
+          <td class="preis">219,00–299,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 240–280 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">8 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-014DAH.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-014DAH.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-015ZÜB" data-auto-ampel="yellow" data-auto-status="5 KI-Felder offen" data-typ="ZÜB" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-015ZÜB</td>
+          <td>Miele DUU 1000-2 UBS Umluft</td>
+          <td class="preis">325,00–392,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 330–380 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">5 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-015Z%C3%9CB.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-015Z%C3%9CB.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr>
+        <tr data-art="K-016ZÜB" data-auto-ampel="yellow" data-auto-status="7 KI-Felder offen" data-typ="ZÜB" data-vkst="1" class="">
+          <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
+          <td class="art">K-016ZÜB</td>
+          <td>Miele CSZL 1500 2er Pack EDST</td>
+          <td class="preis">80,49–127,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 85–116 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+          <td class="status">7 KI-Felder offen</td>
+          <td class="actions">
+            <a class="btn primary" href="arbeitsauftraege/K-016Z%C3%9CB.pdf" target="_blank">🖨️ Arbeitsauftrag</a>
+            <a class="btn second" href="geraetedokus/K-016Z%C3%9CB.pdf" target="_blank">📄 Gerätedoku</a>
+          </td>
+        </tr></tbody>
 </table>
 </div>
 <div class="preistbl">
@@ -84,11 +307,123 @@ tr.ps4>td:first-child{border-left:3px solid #dc3545}
   <div class="tbl-wrap">
   <table>
     <thead><tr><th>Artikel</th><th>Marke / Modell</th><th>Neupreis</th><th>Marktpreis (gebraucht)</th><th>Status</th></tr></thead>
-    <tbody>{''.join(preis_rows_html)}</tbody>
+    <tbody>
+        <tr class="ps1">
+          <td class="art">K-001DAH</td>
+          <td>Berbel Skyline Edge Base BIH 120 SKE-B permalyt®</td>
+          <td class="preis">Haube 7.803,00 € · Deckeneinheit 2.178,00 €</td>
+          <td class="preis">Haube ca. 3.859 € · Deckeneinheit 1.869,00–2.038,70 €</td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-002SPÜ</td>
+          <td>BLANCO ANDANO</td>
+          <td class="preis">508,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">Neu ca. 400–500 €</td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-003SPÜ</td>
+          <td>BLANCO CLARON 180-U</td>
+          <td class="preis">320,96 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 250–320 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-004MÜL</td>
+          <td>BLANCO SELECT II Compact 60/2</td>
+          <td class="preis">199,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 120–170 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-005SPÜ</td>
+          <td>FRANKE Sirius S2D 611-62-NTH</td>
+          <td class="preis">189,50–230,90 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 190–225 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-006SPÜ</td>
+          <td>FRANKE GAX 40</td>
+          <td class="preis">149,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 137,90–293,18 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-007SPÜ</td>
+          <td>FRANKE KBG 210-50</td>
+          <td class="preis">309,00–575,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 280–330 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-008SPÜ</td>
+          <td>FRANKE Sirius S2D 611-62 Carbon</td>
+          <td class="preis">189,50–245,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 200–240 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-009MÜL</td>
+          <td>FRANKE Sorter 422</td>
+          <td class="preis">142,48–226,90 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 145–205 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-010SPÜ</td>
+          <td>hansgrohe S719-U500</td>
+          <td class="preis">385,95–771,24 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 385–515 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-011DRU</td>
+          <td>Imperial-Werke EGLA 2662</td>
+          <td class="preis">nicht belastbar ermittelbar</td>
+          <td class="preis">nicht belastbar ermittelbar</td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-012DAH</td>
+          <td>Miele DAD 4940 Black Levantar</td>
+          <td class="preis">2.391,00–2.639,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 2.400–2.650 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-013DAH</td>
+          <td>Miele CSDA 1000 EDST</td>
+          <td class="preis">nicht belastbar ermittelbar</td>
+          <td class="preis">nicht belastbar ermittelbar</td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-014DAH</td>
+          <td>Miele DMK 150-1</td>
+          <td class="preis">219,00–299,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 240–280 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-015ZÜB</td>
+          <td>Miele DUU 1000-2 UBS Umluft</td>
+          <td class="preis">325,00–392,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 330–380 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr>
+        <tr class="ps1">
+          <td class="art">K-016ZÜB</td>
+          <td>Miele CSZL 1500 2er Pack EDST</td>
+          <td class="preis">80,49–127,00 €<span class="ki">(KI)</span></td>
+          <td class="preis">ca. 85–116 €<span class="ki">(KI)</span></td>
+          <td class="vkst"><span class="badge s1">In Erfassung</span></td>
+        </tr></tbody>
   </table>
   </div>
 </div>
-<div class="foot">Letztes Build: 26.05.2026 18:49</div>
+<div class="foot">Letztes Build: 26.05.2026 19:02</div>
 <script>
 const KEY='domus-geprueft-v1';
 function load(){ try{ return new Set(JSON.parse(localStorage.getItem(KEY)||'[]')); }catch(e){ return new Set(); } }
@@ -120,5 +455,45 @@ document.getElementById('reset').addEventListener('click', ()=>{
   if(confirm('Alle manuellen Häkchen entfernen?')){ localStorage.removeItem(KEY); render(); }
 });
 render();
+// ── Filter & Suche ────────────────────────────────────────────────────────────
+let _fTyp='', _fVkst='';
+function filterTable(){
+  const q=(document.getElementById('q').value||'').toLowerCase();
+  let vis=0;
+  document.querySelectorAll('tr[data-art]').forEach(tr=>{
+    const ok=(!_fTyp  || tr.dataset.typ  === _fTyp)
+           &&(!_fVkst || tr.dataset.vkst === _fVkst)
+           &&(!q     || tr.textContent.toLowerCase().includes(q));
+    tr.style.display=ok?'':'none';
+    if(ok) vis++;
+  });
+  document.getElementById('vis-cnt').textContent=vis;
+}
+function setFilter(kind,val,btn){
+  if(kind==='typ'){ _fTyp=_fTyp===val?'':val; document.querySelectorAll('.fb-typ').forEach(b=>b.classList.remove('active')); }
+  else            { _fVkst=_fVkst===val?'':val; document.querySelectorAll('.fb-vkst').forEach(b=>b.classList.remove('active')); }
+  if((kind==='typ'?_fTyp:_fVkst)===val) btn.classList.add('active');
+  filterTable();
+}
+function exportCSV(){
+  const hdr=['Art','Marke/Modell','Neupreis','Marktpreis','VK-Status'];
+  const lines=[hdr.map(h=>'"'+h+'"').join(';')];
+  document.querySelectorAll('tr[data-art]').forEach(tr=>{
+    if(tr.style.display==='none') return;
+    const td=tr.querySelectorAll('td');
+    lines.push([
+      td[1].textContent.trim(),
+      td[2].textContent.trim(),
+      td[3].textContent.trim().replace(/[(]KI[)]/g,'').trim(),
+      td[4].textContent.trim().replace(/[(]KI[)]/g,'').trim(),
+      td[5].textContent.trim()
+    ].map(c=>'"'+c.replace(/"/g,'""')+'"').join(';'));
+  });
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob(['﻿'+lines.join('
+')],{type:'text/csv;charset=utf-8'}));
+  a.download='domus-lager-'+new Date().toISOString().slice(0,10)+'.csv';
+  a.click();
+}
 </script>
 </body></html>
