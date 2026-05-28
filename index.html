@@ -330,7 +330,7 @@ function filterTable(){
     tr.style.display=ok?'':'none';
     if(ok) vis++;
   });
-  document.getElementById('vis-cnt').textContent=vis;
+  document.getElementById('vis-cnt') && (document.getElementById('vis-cnt').textContent=vis);
 }
 function setFilter(kind,val,btn){
   if(kind==='typ'){ _fTyp=_fTyp===val?'':val; document.querySelectorAll('.fb-typ').forEach(b=>b.classList.remove('active')); }
