@@ -312,7 +312,7 @@ tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
 </table>
 </div></div>
 
-<div class="foot">Letztes Build: 28.05.2026 14:03</div>
+<div class="foot">Letztes Build: 28.05.2026 14:09</div>
 <script>
 // ── VK-Status cycling ────────────────────────────────────────────────────────
 const VKST_KEY='domus-vkst-v1';
@@ -381,8 +381,7 @@ function exportCSV(){
     ].map(c=>'"'+c.replace(/"/g,'""')+'"').join(';'));
   });
   const a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob(['﻿'+lines.join('
-')],{type:'text/csv;charset=utf-8'}));
+  a.href=URL.createObjectURL(new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'}));
   a.download='domus-lager-'+new Date().toISOString().slice(0,10)+'.csv';
   a.click();
 }
