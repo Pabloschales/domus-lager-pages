@@ -284,13 +284,14 @@ tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
 </table>
 </div></div>
 
-<div class="foot">Letztes Build: 28.05.2026 14:20</div>
+<div class="foot">Letztes Build: 28.05.2026 14:23</div>
 <script>
 // ── VK-Status cycling ────────────────────────────────────────────────────────
 const VKST_KEY='domus-vkst-v1';
 const VKST_LBL={'0':'–','1':'In Erfassung','2':'Bereit','3':'Online','4':'Verkauft'};
 const VKST_CLS={'0':'s1','1':'s1','2':'s2','3':'s3','4':'s4'};
 function loadVkst(){ try{ return JSON.parse(localStorage.getItem(VKST_KEY)||'{}'); }catch(e){ return {}; } }
+function saveVkst(o){ try{ localStorage.setItem(VKST_KEY,JSON.stringify(o)); }catch(e){} }
 function updateStats(){
   const c={'1':0,'2':0,'3':0,'4':0};
   document.querySelectorAll('tr[data-art]').forEach(tr=>{ const v=tr.dataset.vkst||'1'; if(c[v]!==undefined) c[v]++; });
@@ -303,10 +304,7 @@ function cycleVkst(btn){
   tr.dataset.vkst=val;
   btn.className='vkst-btn '+VKST_CLS[val];
   btn.textContent=VKST_LBL[val];
-  const badge=tr.querySelector('td.vkst .badge');
-  if(badge){ badge.className='badge '+VKST_CLS[val]; badge.textContent=VKST_LBL[val]; }
-  const ov=loadVkst(); ov[art]=val;
-  try{ saveVkst(ov); }catch(e){}
+  const ov=loadVkst(); ov[art]=val; saveVkst(ov);
   updateStats(); filterTable();
 }
 function renderVkst(){
@@ -315,8 +313,6 @@ function renderVkst(){
     const art=tr.dataset.art;
     const val=ov[art]||tr.dataset.vkstOrig||'1';
     tr.dataset.vkst=val;
-    const badge=tr.querySelector('td.vkst .badge');
-    if(badge){ badge.className='badge '+VKST_CLS[val]; badge.textContent=VKST_LBL[val]; }
     const btn=tr.querySelector('.vkst-btn');
     if(btn){ btn.textContent=VKST_LBL[val]; btn.className='vkst-btn '+VKST_CLS[val]; }
   });
@@ -325,12 +321,10 @@ renderVkst(); updateStats();
 // ── Filter & Suche ────────────────────────────────────────────────────────────
 let _fTyp='', _fVkst='';
 function filterTable(){
-  const q=(document.getElementById('q').value||'').toLowerCase();
   let vis=0;
   document.querySelectorAll('tr[data-art]').forEach(tr=>{
     const ok=(!_fTyp  || tr.dataset.typ  === _fTyp)
-           &&(!_fVkst || tr.dataset.vkst === _fVkst)
-           &&(!q     || tr.textContent.toLowerCase().includes(q));
+           &&(!_fVkst || tr.dataset.vkst === _fVkst);
     tr.style.display=ok?'':'none';
     if(ok) vis++;
   });
