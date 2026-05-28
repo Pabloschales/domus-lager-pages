@@ -56,13 +56,7 @@ tr:hover{background:#fafafa}
 </style></head>
 <body>
 <h1>🏷️ Domus Lager – Arbeitsaufträge</h1>
-<div class="sub">Übersicht aller 16 Artikel. Klick auf die Ampel schaltet zwischen automatisch (KI-Check) und „Geprüft" um. Die Einstellung wird in diesem Browser gespeichert.</div>
-<div class="legend">
-  <span><span class="dot green"></span> Geprüft</span>
-  <span><span class="dot yellow"></span> KI-Vorschläge offen</span>
-  <span><span class="dot grey"></span> Keine Doku</span>
-  <span style="margin-left:auto"><button id="reset" style="background:none;border:1px solid #d2d2d7;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;color:#6e6e73">Alle zurücksetzen</button></span>
-</div>
+
 <div class="filter-bar">
   <input id="q" type="search" placeholder="🔍 Suchen …" oninput="filterTable()">
   <div class="fb-group"><button class="fb fb-typ" onclick="setFilter('typ','DAH',this)">DAH<span class="fb-cnt">4</span></button><button class="fb fb-typ" onclick="setFilter('typ','DRU',this)">DRU<span class="fb-cnt">1</span></button><button class="fb fb-typ" onclick="setFilter('typ','MÜL',this)">MÜL<span class="fb-cnt">2</span></button><button class="fb fb-typ" onclick="setFilter('typ','SPÜ',this)">SPÜ<span class="fb-cnt">7</span></button><button class="fb fb-typ" onclick="setFilter('typ','ZÜB',this)">ZÜB<span class="fb-cnt">2</span></button></div>
@@ -316,7 +310,7 @@ tr:hover{background:#fafafa}
 </table>
 </div>
 
-<div class="foot">Letztes Build: 28.05.2026 12:30</div>
+<div class="foot">Letztes Build: 28.05.2026 12:39</div>
 <script>
 const KEY='domus-geprueft-v1';
 function load(){ try{ return new Set(JSON.parse(localStorage.getItem(KEY)||'[]')); }catch(e){ return new Set(); } }
@@ -343,9 +337,6 @@ document.querySelectorAll('.dot-btn').forEach(btn=>{
     if(set.has(art)) set.delete(art); else set.add(art);
     save(set); render();
   });
-});
-document.getElementById('reset').addEventListener('click', ()=>{
-  if(confirm('Alle manuellen Häkchen entfernen?')){ localStorage.removeItem(KEY); render(); }
 });
 render();
 // ── VK-Status cycling ────────────────────────────────────────────────────────
