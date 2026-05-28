@@ -287,8 +287,25 @@ tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
 </table>
 </div></div>
 
-<div class="foot">Letztes Build: 28.05.2026 14:44</div>
+<div class="foot">Letztes Build: 28.05.2026 14:52</div>
 <script>
+// ── Passwortschutz ────────────────────────────────────────────────────────────
+(async function(){
+  const HASH='c235f6e552a28601f6f77503c786da9d8579c273df5a8bd3091570fe3ad8f49e';
+  async function sha256(s){
+    const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
+    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+  if(sessionStorage.getItem('domus-auth')==='1') return;
+  document.body.style.display='none';
+  let pw='';
+  while(true){
+    pw=window.prompt('Passwort eingeben:','');
+    if(pw===null){ document.body.innerHTML='<p style="padding:40px;font-family:sans-serif">Zugriff verweigert.</p>'; document.body.style.display=''; return; }
+    if(await sha256(pw)===HASH){ sessionStorage.setItem('domus-auth','1'); document.body.style.display=''; return; }
+    alert('Falsches Passwort. Bitte erneut versuchen.');
+  }
+})();
 // ── VK-Status cycling ────────────────────────────────────────────────────────
 const VKST_KEY='domus-vkst-v1';
 const VKST_LBL={'0':'–','1':'In Erfassung','2':'Bereit','3':'Online','4':'Verkauft'};
