@@ -61,10 +61,10 @@ tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
   <div class="stat-card">
     <div class="stat-lbl" style="margin-bottom:8px">Verkauf-Status</div>
     <div class="stat-badges">
-      <span class="badge s1">16 Erfassung</span>
-      <span class="badge s2">0 Bereit</span>
-      <span class="badge s3">0 Online</span>
-      <span class="badge s4">0 Verkauft</span>
+      <span id="st1" class="badge s1">16 Erfassung</span>
+      <span id="st2" class="badge s2">0 Bereit</span>
+      <span id="st3" class="badge s3">0 Online</span>
+      <span id="st4" class="badge s4">0 Verkauft</span>
     </div>
   </div>
   <div class="stat-card"><div class="stat-val" style="color:#ff9500">16</div><div class="stat-lbl">KI-Felder offen</div></div>
@@ -284,14 +284,18 @@ tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
 </table>
 </div></div>
 
-<div class="foot">Letztes Build: 28.05.2026 14:17</div>
+<div class="foot">Letztes Build: 28.05.2026 14:20</div>
 <script>
 // ── VK-Status cycling ────────────────────────────────────────────────────────
 const VKST_KEY='domus-vkst-v1';
 const VKST_LBL={'0':'–','1':'In Erfassung','2':'Bereit','3':'Online','4':'Verkauft'};
 const VKST_CLS={'0':'s1','1':'s1','2':'s2','3':'s3','4':'s4'};
 function loadVkst(){ try{ return JSON.parse(localStorage.getItem(VKST_KEY)||'{}'); }catch(e){ return {}; } }
-function saveVkst(o){ localStorage.setItem(VKST_KEY,JSON.stringify(o)); }
+function updateStats(){
+  const c={'1':0,'2':0,'3':0,'4':0};
+  document.querySelectorAll('tr[data-art]').forEach(tr=>{ const v=tr.dataset.vkst||'1'; if(c[v]!==undefined) c[v]++; });
+  [1,2,3,4].forEach(i=>{ const el=document.getElementById('st'+i); if(el) el.textContent=c[i]+' '+['','In Erfassung','Bereit','Online','Verkauft'][i]; });
+}
 const VKST_NEXT={'1':'2','2':'3','3':'4','4':'1'};
 function cycleVkst(btn){
   const tr=btn.closest('tr'); const art=tr.dataset.art;
@@ -303,7 +307,7 @@ function cycleVkst(btn){
   if(badge){ badge.className='badge '+VKST_CLS[val]; badge.textContent=VKST_LBL[val]; }
   const ov=loadVkst(); ov[art]=val;
   try{ saveVkst(ov); }catch(e){}
-  filterTable();
+  updateStats(); filterTable();
 }
 function renderVkst(){
   const ov=loadVkst();
@@ -317,7 +321,7 @@ function renderVkst(){
     if(btn){ btn.textContent=VKST_LBL[val]; btn.className='vkst-btn '+VKST_CLS[val]; }
   });
 }
-renderVkst();
+renderVkst(); updateStats();
 // ── Filter & Suche ────────────────────────────────────────────────────────────
 let _fTyp='', _fVkst='';
 function filterTable(){
