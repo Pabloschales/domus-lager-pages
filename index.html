@@ -23,7 +23,8 @@ tr:hover{background:#fafafa}
 .preis{font-size:13px;color:#1d1d1f;width:160px}
 .ki{font-size:11px;color:#86868b}
 .nd{color:#c7c7cc}
-.vkst{width:110px}
+.vkst{width:110px;cursor:pointer}
+.vkst:hover .badge{filter:brightness(.9)}
 .badge{display:inline-block;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.3px}
 .badge.s1{background:#fff3cd;color:#856404}
 .badge.s2{background:#cfe2ff;color:#0a58ca}
@@ -88,7 +89,7 @@ tr:hover{background:#fafafa}
 <table>
   <thead><tr><th></th><th>Artikel</th><th>Marke / Modell</th><th>Neupreis</th><th>Marktpreis (gebraucht)</th><th>Verkauf</th><th>KI-Check</th><th>Aktionen</th></tr></thead>
   <tbody>
-        <tr data-art="K-001DAH" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="DAH" data-vkst="1" class="">
+        <tr data-art="K-001DAH" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="DAH" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-001DAH</td>
           <td>Berbel Skyline Edge Base BIH 120 SKE-B permalyt®</td>
@@ -102,7 +103,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-001DAH.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-002SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+        <tr data-art="K-002SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-002SPÜ</td>
           <td>BLANCO ANDANO</td>
@@ -116,7 +117,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-002SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-003SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+        <tr data-art="K-003SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-003SPÜ</td>
           <td>BLANCO CLARON 180-U</td>
@@ -130,7 +131,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-003SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-004MÜL" data-auto-ampel="yellow" data-auto-status="8 KI-Felder offen" data-typ="MÜL" data-vkst="1" class="">
+        <tr data-art="K-004MÜL" data-auto-ampel="yellow" data-auto-status="8 KI-Felder offen" data-typ="MÜL" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-004MÜL</td>
           <td>BLANCO SELECT II Compact 60/2</td>
@@ -144,7 +145,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-004M%C3%9CL.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-005SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+        <tr data-art="K-005SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-005SPÜ</td>
           <td>FRANKE Sirius S2D 611-62-NTH</td>
@@ -158,7 +159,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-005SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-006SPÜ" data-auto-ampel="yellow" data-auto-status="10 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+        <tr data-art="K-006SPÜ" data-auto-ampel="yellow" data-auto-status="10 KI-Felder offen" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-006SPÜ</td>
           <td>FRANKE GAX 40</td>
@@ -172,7 +173,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-006SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-007SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+        <tr data-art="K-007SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-007SPÜ</td>
           <td>FRANKE KBG 210-50</td>
@@ -186,7 +187,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-007SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-008SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+        <tr data-art="K-008SPÜ" data-auto-ampel="yellow" data-auto-status="11 KI-Felder offen" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-008SPÜ</td>
           <td>FRANKE Sirius S2D 611-62 Carbon</td>
@@ -200,7 +201,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-008SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-009MÜL" data-auto-ampel="yellow" data-auto-status="7 KI-Felder offen" data-typ="MÜL" data-vkst="1" class="">
+        <tr data-art="K-009MÜL" data-auto-ampel="yellow" data-auto-status="7 KI-Felder offen" data-typ="MÜL" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-009MÜL</td>
           <td>FRANKE Sorter 422</td>
@@ -214,7 +215,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-009M%C3%9CL.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-010SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="SPÜ" data-vkst="1" class="">
+        <tr data-art="K-010SPÜ" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-010SPÜ</td>
           <td>hansgrohe S719-U500</td>
@@ -228,7 +229,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-010SP%C3%9C.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-011DRU" data-auto-ampel="yellow" data-auto-status="2 KI-Felder offen" data-typ="DRU" data-vkst="1" class="">
+        <tr data-art="K-011DRU" data-auto-ampel="yellow" data-auto-status="2 KI-Felder offen" data-typ="DRU" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-011DRU</td>
           <td>Imperial-Werke EGLA 2662</td>
@@ -242,7 +243,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-011DRU.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-012DAH" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="DAH" data-vkst="1" class="">
+        <tr data-art="K-012DAH" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="DAH" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-012DAH</td>
           <td>Miele DAD 4940 Black Levantar</td>
@@ -256,7 +257,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-012DAH.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-013DAH" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="DAH" data-vkst="1" class="">
+        <tr data-art="K-013DAH" data-auto-ampel="yellow" data-auto-status="9 KI-Felder offen" data-typ="DAH" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-013DAH</td>
           <td>Miele CSDA 1000 EDST</td>
@@ -270,7 +271,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-013DAH.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-014DAH" data-auto-ampel="yellow" data-auto-status="8 KI-Felder offen" data-typ="DAH" data-vkst="1" class="">
+        <tr data-art="K-014DAH" data-auto-ampel="yellow" data-auto-status="8 KI-Felder offen" data-typ="DAH" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-014DAH</td>
           <td>Miele DMK 150-1</td>
@@ -284,7 +285,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-014DAH.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-015ZÜB" data-auto-ampel="yellow" data-auto-status="5 KI-Felder offen" data-typ="ZÜB" data-vkst="1" class="">
+        <tr data-art="K-015ZÜB" data-auto-ampel="yellow" data-auto-status="5 KI-Felder offen" data-typ="ZÜB" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-015ZÜB</td>
           <td>Miele DUU 1000-2 UBS Umluft</td>
@@ -298,7 +299,7 @@ tr:hover{background:#fafafa}
             <a class="btn second" href="geraetedokus/K-015Z%C3%9CB.pdf" target="_blank">📄 Gerätedoku</a>
           </td>
         </tr>
-        <tr data-art="K-016ZÜB" data-auto-ampel="yellow" data-auto-status="7 KI-Felder offen" data-typ="ZÜB" data-vkst="1" class="">
+        <tr data-art="K-016ZÜB" data-auto-ampel="yellow" data-auto-status="7 KI-Felder offen" data-typ="ZÜB" data-vkst="1" data-vkst-orig="1" class="">
           <td class="ampel"><button class="dot-btn" title="Klick: Status umschalten"><span class="dot yellow"></span></button></td>
           <td class="art">K-016ZÜB</td>
           <td>Miele CSZL 1500 2er Pack EDST</td>
@@ -315,7 +316,7 @@ tr:hover{background:#fafafa}
 </table>
 </div>
 
-<div class="foot">Letztes Build: 28.05.2026 12:19</div>
+<div class="foot">Letztes Build: 28.05.2026 12:30</div>
 <script>
 const KEY='domus-geprueft-v1';
 function load(){ try{ return new Set(JSON.parse(localStorage.getItem(KEY)||'[]')); }catch(e){ return new Set(); } }
@@ -347,6 +348,34 @@ document.getElementById('reset').addEventListener('click', ()=>{
   if(confirm('Alle manuellen Häkchen entfernen?')){ localStorage.removeItem(KEY); render(); }
 });
 render();
+// ── VK-Status cycling ────────────────────────────────────────────────────────
+const VKST_KEY='domus-vkst-v1';
+const VKST_NEXT={'1':'2','2':'3','3':'4','4':'1'};
+const VKST_LBL={'0':'–','1':'In Erfassung','2':'Bereit','3':'Online','4':'Verkauft'};
+const VKST_CLS={'0':'','1':'s1','2':'s2','3':'s3','4':'s4'};
+function loadVkst(){ try{ return JSON.parse(localStorage.getItem(VKST_KEY)||'{}'); }catch(e){ return {}; } }
+function saveVkst(o){ localStorage.setItem(VKST_KEY,JSON.stringify(o)); }
+function renderVkst(){
+  const ov=loadVkst();
+  document.querySelectorAll('tr[data-art]').forEach(tr=>{
+    const art=tr.dataset.art;
+    const val=ov[art]||tr.dataset.vkstOrig||'0';
+    tr.dataset.vkst=val;
+    const badge=tr.querySelector('td.vkst .badge');
+    if(badge){ badge.className='badge '+VKST_CLS[val]; badge.textContent=VKST_LBL[val]; }
+  });
+}
+document.querySelectorAll('td.vkst').forEach(td=>{
+  td.title='Klick: VK-Status weiterschalten (Erfassung → Bereit → Online → Verkauft)';
+  td.addEventListener('click',()=>{
+    const tr=td.closest('tr'); const art=tr.dataset.art;
+    const ov=loadVkst();
+    const cur=ov[art]||tr.dataset.vkstOrig||'1';
+    ov[art]=VKST_NEXT[cur]||'1';
+    saveVkst(ov); renderVkst(); filterTable();
+  });
+});
+renderVkst();
 // ── Filter & Suche ────────────────────────────────────────────────────────────
 let _fTyp='', _fVkst='';
 function filterTable(){
