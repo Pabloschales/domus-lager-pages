@@ -6,11 +6,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f5f5f7;
 h1{margin:0 0 8px;font-size:28px}
 .sub{color:#6e6e73;margin-bottom:20px;font-size:14px}
 .legend{display:flex;gap:16px;font-size:13px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
-table{width:100%;border-collapse:collapse;background:white}
+table{width:100%;border-collapse:separate;border-spacing:0;background:white;border-radius:12px}
 th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #e5e5ea;font-size:14px;vertical-align:middle}
 th{background:#fafafa;font-weight:600;color:#6e6e73;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
 tr:last-child td{border-bottom:none}
 tr:hover{background:#fafafa}
+thead tr:first-child th:first-child{border-radius:12px 0 0 0}
+thead tr:first-child th:last-child{border-radius:0 12px 0 0}
+tbody tr:last-child td:first-child{border-radius:0 0 0 12px}
+tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
 .vkst-sel-td{width:96px}
 .vkst-sel{border:none;border-radius:12px;padding:4px 6px;font-size:11px;font-weight:600;cursor:pointer;width:100%;outline:none}
 .vkst-sel.s1{background:#fff3cd;color:#856404}
@@ -34,7 +38,7 @@ tr:hover{background:#fafafa}
 .btn.second{background:#5e5ce6} .btn.second:hover{background:#4a48b8}
 .btn.upload{background:#30b96b} .btn.upload:hover{background:#25975a}
 .foot{margin-top:24px;color:#86868b;font-size:12px;text-align:center}
-.tbl-outer{border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.tbl-outer{border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .tbl-wrap{overflow-x:auto}
 @media (max-width:900px){ td.actions{white-space:normal} .btn{margin-top:4px} .preis{min-width:120px} }
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-bottom:24px}
@@ -308,7 +312,7 @@ tr:hover{background:#fafafa}
 </table>
 </div></div>
 
-<div class="foot">Letztes Build: 28.05.2026 13:24</div>
+<div class="foot">Letztes Build: 28.05.2026 13:56</div>
 <script>
 // ── VK-Status cycling ────────────────────────────────────────────────────────
 const VKST_KEY='domus-vkst-v1';
