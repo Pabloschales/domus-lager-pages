@@ -36,6 +36,19 @@ tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
 .tbl-outer{border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .tbl-wrap{overflow-x:auto}
 @media (max-width:900px){ td.actions{white-space:normal} .btn{margin-top:4px} .preis{min-width:120px} }
+@media (max-width:600px){
+  body{padding:12px}
+  th,td{padding:8px 9px;font-size:12px}
+  .btn{padding:6px 9px;font-size:12px}
+  .vkst-btn-td{width:95px}
+  .vkst-btn{font-size:10px;padding:3px 5px}
+  .foto-cell-btn{font-size:9px;padding:2px 4px}
+  .art{width:60px;font-size:11px}
+  .preis{min-width:90px;font-size:12px}
+  .status{width:110px;font-size:11px}
+  .stat-card{padding:11px 13px}
+  .stat-val{font-size:18px}
+}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-bottom:24px}
 .stat-card{background:white;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .stat-val{font-size:22px;font-weight:700;color:#1d1d1f;margin-bottom:3px}
@@ -269,7 +282,7 @@ tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
 </table>
 </div></div>
 
-<div class="foot">Letztes Build: 28.05.2026 14:40</div>
+<div class="foot">Letztes Build: 28.05.2026 14:42</div>
 <script>
 // ── VK-Status cycling ────────────────────────────────────────────────────────
 const VKST_KEY='domus-vkst-v1';
