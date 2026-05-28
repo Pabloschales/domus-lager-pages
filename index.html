@@ -81,7 +81,7 @@ tr:hover{background:#fafafa}
   <thead><tr><th></th><th>Artikel</th><th>Marke / Modell</th><th>Neupreis</th><th>Marktpreis (gebraucht)</th><th>Verkauf</th><th>KI-Check</th><th>Aktionen</th></tr></thead>
   <tbody>
         <tr data-art="K-001DAH" data-typ="DAH" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-001DAH</td>
           <td>Berbel Skyline Edge Base BIH 120 SKE-B permalyt®</td>
           <td class="preis">Haube 7.803,00 € · Deckeneinheit 2.178,00 €</td>
@@ -95,7 +95,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-002SPÜ" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-002SPÜ</td>
           <td>BLANCO ANDANO</td>
           <td class="preis">508,00 €<span class="ki">(KI)</span></td>
@@ -109,7 +109,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-003SPÜ" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-003SPÜ</td>
           <td>BLANCO CLARON 180-U</td>
           <td class="preis">320,96 €<span class="ki">(KI)</span></td>
@@ -123,7 +123,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-004MÜL" data-typ="MÜL" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-004MÜL</td>
           <td>BLANCO SELECT II Compact 60/2</td>
           <td class="preis">199,00 €<span class="ki">(KI)</span></td>
@@ -137,7 +137,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-005SPÜ" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-005SPÜ</td>
           <td>FRANKE Sirius S2D 611-62-NTH</td>
           <td class="preis">189,50–230,90 €<span class="ki">(KI)</span></td>
@@ -151,7 +151,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-006SPÜ" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-006SPÜ</td>
           <td>FRANKE GAX 40</td>
           <td class="preis">149,00 €<span class="ki">(KI)</span></td>
@@ -165,7 +165,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-007SPÜ" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-007SPÜ</td>
           <td>FRANKE KBG 210-50</td>
           <td class="preis">309,00–575,00 €<span class="ki">(KI)</span></td>
@@ -179,7 +179,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-008SPÜ" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-008SPÜ</td>
           <td>FRANKE Sirius S2D 611-62 Carbon</td>
           <td class="preis">189,50–245,00 €<span class="ki">(KI)</span></td>
@@ -193,7 +193,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-009MÜL" data-typ="MÜL" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-009MÜL</td>
           <td>FRANKE Sorter 422</td>
           <td class="preis">142,48–226,90 €<span class="ki">(KI)</span></td>
@@ -207,7 +207,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-010SPÜ" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-010SPÜ</td>
           <td>hansgrohe S719-U500</td>
           <td class="preis">385,95–771,24 €<span class="ki">(KI)</span></td>
@@ -221,7 +221,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-011DRU" data-typ="DRU" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-011DRU</td>
           <td>Imperial-Werke EGLA 2662</td>
           <td class="preis">nicht belastbar ermittelbar</td>
@@ -235,7 +235,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-012DAH" data-typ="DAH" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-012DAH</td>
           <td>Miele DAD 4940 Black Levantar</td>
           <td class="preis">2.391,00–2.639,00 €<span class="ki">(KI)</span></td>
@@ -249,7 +249,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-013DAH" data-typ="DAH" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-013DAH</td>
           <td>Miele CSDA 1000 EDST</td>
           <td class="preis">nicht belastbar ermittelbar</td>
@@ -263,7 +263,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-014DAH" data-typ="DAH" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-014DAH</td>
           <td>Miele DMK 150-1</td>
           <td class="preis">219,00–299,00 €<span class="ki">(KI)</span></td>
@@ -277,7 +277,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-015ZÜB" data-typ="ZÜB" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-015ZÜB</td>
           <td>Miele DUU 1000-2 UBS Umluft</td>
           <td class="preis">325,00–392,00 €<span class="ki">(KI)</span></td>
@@ -291,7 +291,7 @@ tr:hover{background:#fafafa}
           </td>
         </tr>
         <tr data-art="K-016ZÜB" data-typ="ZÜB" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-sel-td"><select class="vkst-sel s1"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
+          <td class="vkst-sel-td"><select class="vkst-sel s1" onchange="selVkst(this)"><option value="1">Erfassung</option><option value="2">Bereit</option><option value="3">Online</option><option value="4">Verkauft</option></select></td>
           <td class="art">K-016ZÜB</td>
           <td>Miele CSZL 1500 2er Pack EDST</td>
           <td class="preis">80,49–127,00 €<span class="ki">(KI)</span></td>
@@ -307,7 +307,7 @@ tr:hover{background:#fafafa}
 </table>
 </div>
 
-<div class="foot">Letztes Build: 28.05.2026 13:04</div>
+<div class="foot">Letztes Build: 28.05.2026 13:11</div>
 <script>
 // ── VK-Status cycling ────────────────────────────────────────────────────────
 const VKST_KEY='domus-vkst-v1';
@@ -315,6 +315,12 @@ const VKST_LBL={'0':'–','1':'In Erfassung','2':'Bereit','3':'Online','4':'Verk
 const VKST_CLS={'0':'s1','1':'s1','2':'s2','3':'s3','4':'s4'};
 function loadVkst(){ try{ return JSON.parse(localStorage.getItem(VKST_KEY)||'{}'); }catch(e){ return {}; } }
 function saveVkst(o){ localStorage.setItem(VKST_KEY,JSON.stringify(o)); }
+function selVkst(sel){
+  const tr=sel.closest('tr'); const art=tr.dataset.art;
+  const ov=loadVkst();
+  ov[art]=sel.value;
+  saveVkst(ov); renderVkst(); filterTable();
+}
 function renderVkst(){
   const ov=loadVkst();
   document.querySelectorAll('tr[data-art]').forEach(tr=>{
