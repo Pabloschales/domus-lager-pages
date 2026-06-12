@@ -17,13 +17,18 @@ thead tr:first-child th:first-child{border-radius:12px 0 0 0}
 thead tr:first-child th:last-child{border-radius:0 12px 0 0}
 tbody tr:last-child td:first-child{border-radius:0 0 0 12px}
 tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
-.vkst-btn-td{width:110px}
-.vkst-btn{border:none;border-radius:12px;padding:4px 6px;font-size:11px;font-weight:600;cursor:pointer;width:100%;outline:none;text-align:center;display:block}
+.vkst-btn-td{width:124px}
+.vkst-btn{border:none;border-radius:12px;padding:5px 6px;font-size:11px;font-weight:600;cursor:pointer;width:100%;outline:none;text-align:center;display:block;line-height:1.25}
 .foto-cell-btn{display:block;margin-top:5px;border-radius:8px;padding:3px 5px;font-size:10px;font-weight:500;width:100%;text-align:center;background:#30b96b;color:white;text-decoration:none;line-height:1.4;white-space:normal;box-sizing:border-box}
-.vkst-btn.s1{background:#fff3cd;color:#856404}
-.vkst-btn.s2{background:#cfe2ff;color:#0a58ca}
-.vkst-btn.s3{background:#d1e7dd;color:#146c43}
-.vkst-btn.s4{background:#f8d7da;color:#842029}
+.vkst-btn.s1{background:#e9ecef;color:#495057}
+.vkst-btn.s2{background:#fff3cd;color:#856404}
+.vkst-btn.s3{background:#ffe2c2;color:#a85600}
+.vkst-btn.s4{background:#cfe2ff;color:#0a58ca}
+.vkst-btn.s5{background:#d1e7dd;color:#146c43}
+.vkst-btn.s6{background:#e3d9f5;color:#59359a}
+.info-check{text-align:center}
+.info-miss{display:inline-block;min-width:24px;color:#fff;background:#d70015;border-radius:11px;padding:2px 8px;font-weight:700;font-size:13px}
+.info-ok{color:#34c759;font-weight:600;font-size:13px}
 .art{font-weight:600;font-family:ui-monospace,monospace;width:80px}
 .marke{font-weight:600;width:120px}
 .modell{width:180px;color:#1d1d1f}
@@ -62,12 +67,12 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
   body{padding:12px}
   th,td{padding:8px 9px;font-size:12px}
   .btn{padding:6px 9px;font-size:12px}
-  .vkst-btn-td{width:95px}
+  .vkst-btn-td{width:104px}
   .vkst-btn{font-size:10px;padding:3px 5px}
   .foto-cell-btn{font-size:9px;padding:2px 4px}
   .art{width:60px;font-size:11px}
   .preis{min-width:90px;font-size:12px}
-  .status{width:110px;font-size:11px}
+  .status{width:90px;font-size:11px}
   .stat-card{padding:11px 13px}
   .stat-val{font-size:18px}
 }
@@ -77,10 +82,12 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
 .stat-lbl{font-size:12px;color:#86868b}
 .stat-badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
 .badge{display:inline-block;border-radius:8px;padding:3px 8px;font-size:12px;font-weight:600}
-.badge.s1{background:#fff3cd;color:#856404}
-.badge.s2{background:#cfe2ff;color:#0a58ca}
-.badge.s3{background:#d1e7dd;color:#146c43}
-.badge.s4{background:#f8d7da;color:#842029}
+.badge.s1{background:#e9ecef;color:#495057}
+.badge.s2{background:#fff3cd;color:#856404}
+.badge.s3{background:#ffe2c2;color:#a85600}
+.badge.s4{background:#cfe2ff;color:#0a58ca}
+.badge.s5{background:#d1e7dd;color:#146c43}
+.badge.s6{background:#e3d9f5;color:#59359a}
 
 .filter-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:20px;background:white;padding:12px 16px;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 #q{border:1px solid #d2d2d7;border-radius:8px;padding:7px 12px;font-size:13px;outline:none;min-width:140px;flex:1 1 140px}#q:focus{border-color:#0071e3}
@@ -100,28 +107,30 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
   <div class="stat-card"><div class="stat-val">€ 13.212</div><div class="stat-lbl">Neupreis Summe (14 Artikel)</div></div>
   <div class="stat-card"><div class="stat-val">€ 7.032</div><div class="stat-lbl">Marktpreis Summe (14 Artikel)</div></div>
   <div class="stat-card">
-    <div class="stat-lbl" style="margin-bottom:8px">Verkauf-Status</div>
+    <div class="stat-lbl" style="margin-bottom:8px">Status</div>
     <div class="stat-badges">
-      <span id="st1" class="badge s1">16 Erfassung</span>
-      <span id="st2" class="badge s2">0 Bereit</span>
-      <span id="st3" class="badge s3">0 Online</span>
-      <span id="st4" class="badge s4">0 Verkauft</span>
+      <span id="st1" class="badge s1">24 Erfassung</span>
+      <span id="st2" class="badge s2">0 Datensammlung</span>
+      <span id="st3" class="badge s3">0 Datenpflege</span>
+      <span id="st4" class="badge s4">0 Veröffentlichung</span>
+      <span id="st5" class="badge s5">0 Verkauf</span>
+      <span id="st6" class="badge s6">0 Abschluss</span>
     </div>
   </div>
-  <div class="stat-card"><div class="stat-val" style="color:#ff9500">23</div><div class="stat-lbl">KI-Felder offen</div></div>
+  <div class="stat-card"><div class="stat-val" style="color:#ff9500">1684</div><div class="stat-lbl">Infos fehlen</div></div>
 </div>
 <div class="tbl-outer"><div class="tbl-wrap">
 <table>
-  <thead><tr><th></th><th>Artikel</th><th>Marke</th><th>Modell</th><th class="col-neu col-toggle" title="Neupreis – klicken zum Ein-/Ausklappen" onclick="toggleCol('neu')"><span class="col-txt">Neupreis</span><span class="col-abbr">NP</span><span class="col-arrow">▾</span></th><th class="col-markt col-toggle" title="Marktpreis (Online) – klicken zum Ein-/Ausklappen" onclick="toggleCol('markt')"><span class="col-txt">Marktpreis (Online)</span><span class="col-abbr">MP</span><span class="col-arrow">▾</span></th><th>KI-Check</th><th>Dokumentation &amp; Formular</th></tr></thead>
+  <thead><tr><th>Status</th><th>Artikel</th><th>Marke</th><th>Modell</th><th class="col-neu col-toggle" title="Neupreis – klicken zum Ein-/Ausklappen" onclick="toggleCol('neu')"><span class="col-txt">Neupreis</span><span class="col-abbr">NP</span><span class="col-arrow">▾</span></th><th class="col-markt col-toggle" title="Marktpreis (Online) – klicken zum Ein-/Ausklappen" onclick="toggleCol('markt')"><span class="col-txt">Marktpreis (Online)</span><span class="col-abbr">MP</span><span class="col-arrow">▾</span></th><th title="Anzahl fehlender oder geschätzter Felder">Info-Check</th><th>Dokumentation &amp; Formular</th></tr></thead>
   <tbody>
         <tr data-art="DAH-001" data-typ="DAH" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">DAH-001</td>
           <td class="marke">Berbel </td>
           <td class="modell">Skyline Edge Base BIH 120 SKE-B permalyt®</td>
           <td class="preis col-neu"><span class="cv">Haube 7.803,00 € · Deckeneinheit 2.178,00 €</span></td>
           <td class="preis col-markt"><span class="cv">Haube ca. 3.859 € · Deckeneinheit 1.869,00–2.038,70 €</span></td>
-          <td class="status">10 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="61 fehlende oder geschätzte Felder">61</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=DAH-001&entry.1437724510=Berbel&entry.1728118846=Skyline+Edge+Base+BIH+120+SKE-B+permalyt%C2%AE&entry.1324332801=1200+%C3%97+461+%C3%97+280+mm%0A1465+%C3%97+576+%C3%97+364+mm%0A60+kg" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/DAH-001.pdf" target="_blank">📄 Gerätedoku</a>
@@ -129,13 +138,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="DAH-002" data-typ="DAH" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">DAH-002</td>
           <td class="marke">Miele </td>
           <td class="modell">DAD 4940 Black Levantar</td>
           <td class="preis col-neu"><span class="cv">2.391,00–2.639,00 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 2.400–2.650 €<span class="ki">(KI)</span></span></td>
-          <td class="status">9 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="70 fehlende oder geschätzte Felder">70</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=DAH-002&entry.1437724510=Miele&entry.1728118846=DAD+4940+Black+Levantar&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/DAH-002.pdf" target="_blank">📄 Gerätedoku</a>
@@ -143,13 +152,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="DAH-003" data-typ="DAH" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">DAH-003</td>
           <td class="marke">Miele </td>
           <td class="modell">CSDA 1000 EDST</td>
           <td class="preis col-neu"><span class="cv">nicht belastbar ermittelbar</span></td>
           <td class="preis col-markt"><span class="cv">nicht belastbar ermittelbar</span></td>
-          <td class="status">9 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="70 fehlende oder geschätzte Felder">70</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=DAH-003&entry.1437724510=Miele&entry.1728118846=CSDA+1000+EDST&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/DAH-003.pdf" target="_blank">📄 Gerätedoku</a>
@@ -157,13 +166,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="DAH-004" data-typ="DAH" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">DAH-004</td>
           <td class="marke">Miele </td>
           <td class="modell">DMK 150-1</td>
           <td class="preis col-neu"><span class="cv">219,00–299,00 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 240–280 €<span class="ki">(KI)</span></span></td>
-          <td class="status">8 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="69 fehlende oder geschätzte Felder">69</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=DAH-004&entry.1437724510=Miele&entry.1728118846=DMK+150-1&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/DAH-004.pdf" target="_blank">📄 Gerätedoku</a>
@@ -171,69 +180,69 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="DRU-001" data-typ="DRU" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">DRU-001</td>
           <td class="marke">Imperial-Werke </td>
           <td class="modell">EGLA 2662</td>
           <td class="preis col-neu"><span class="cv">nicht belastbar ermittelbar</span></td>
           <td class="preis col-markt"><span class="cv">nicht belastbar ermittelbar</span></td>
-          <td class="status">2 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="71 fehlende oder geschätzte Felder">71</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=DRU-001&entry.1437724510=Imperial-Werke&entry.1728118846=EGLA+2662&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/DRU-001.pdf" target="_blank">📄 Gerätedoku</a>
             <a class="btn cloud" href="https://www.icloud.com/iclouddrive/0437V3QJVCaV_UP80Ja0eHkHw#DRU-001_IMPERIAL_EGLA_2662" target="_blank">☁️ Daten</a>
           </td>
         </tr>
-        <tr data-art="ELK-001" data-typ="ELK" data-vkst="0" data-vkst-orig="0">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+        <tr data-art="ELK-001" data-typ="ELK" data-vkst="1" data-vkst-orig="1">
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">ELK-001</td>
           <td class="marke">Bang &amp; Olufsen </td>
           <td class="modell">BeoLab 3500</td>
           <td class="preis col-neu"><span class="cv"><span class="nd">–</span></span></td>
           <td class="preis col-markt"><span class="cv"><span class="nd">–</span></span></td>
-          <td class="status">17 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="72 fehlende oder geschätzte Felder">72</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=ELK-001&entry.1437724510=Bang+%26+Olufsen&entry.1728118846=BeoLab+3500&entry.1324332801=ca.+160+%C3%97+145+%C3%97+145+mm%0Aca.+4+kg" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/ELK-001.pdf" target="_blank">📄 Gerätedoku</a>
             <a class="btn cloud" href="https://www.icloud.com/iclouddrive/08cEbZpdduOGc2JydNyXJNMsA#ELK-001_Bang_&_Olufsen_BeoLab_3500_Aktivlautsprecher" target="_blank">☁️ Daten</a>
           </td>
         </tr>
-        <tr data-art="ELK-002" data-typ="ELK" data-vkst="0" data-vkst-orig="0">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+        <tr data-art="ELK-002" data-typ="ELK" data-vkst="1" data-vkst-orig="1">
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">ELK-002</td>
           <td class="marke">Bang &amp; Olufsen </td>
           <td class="modell">BeoSound 4</td>
           <td class="preis col-neu"><span class="cv"><span class="nd">–</span></span></td>
           <td class="preis col-markt"><span class="cv"><span class="nd">–</span></span></td>
-          <td class="status">18 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="72 fehlende oder geschätzte Felder">72</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=ELK-002&entry.1437724510=Bang+%26+Olufsen&entry.1728118846=BeoSound+4&entry.1324332801=ca.+290+%C3%97+55+%C3%97+165+mm%0Aca.+3%2C5+kg" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/ELK-002.pdf" target="_blank">📄 Gerätedoku</a>
             <a class="btn cloud" href="https://www.icloud.com/iclouddrive/0a1m1AtcCGJe9tnapFOrSdBsw#ELK-002_Bang_&_Olufsen_BeoSound_4" target="_blank">☁️ Daten</a>
           </td>
         </tr>
-        <tr data-art="ELK-003" data-typ="ELK" data-vkst="0" data-vkst-orig="0">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+        <tr data-art="ELK-003" data-typ="ELK" data-vkst="1" data-vkst-orig="1">
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">ELK-003</td>
           <td class="marke">Bang &amp; Olufsen </td>
           <td class="modell">BeoVision 10-40</td>
           <td class="preis col-neu"><span class="cv"><span class="nd">–</span></span></td>
           <td class="preis col-markt"><span class="cv"><span class="nd">–</span></span></td>
-          <td class="status">19 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="72 fehlende oder geschätzte Felder">72</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=ELK-003&entry.1437724510=Bang+%26+Olufsen&entry.1728118846=BeoVision+10-40&entry.1324332801=ca.+990+%C3%97+80+%C3%97+590+mm+%28ohne+Standfu%C3%9F%29%0Aca.+24+kg+%28ohne+Standfu%C3%9F%29" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/ELK-003.pdf" target="_blank">📄 Gerätedoku</a>
             <a class="btn cloud" href="https://www.icloud.com/iclouddrive/02cMNRcFaJ3S7CEMlp2wTNhAQ#ELK-003_Bang_&_Olufsen_BeoVision_10-40" target="_blank">☁️ Daten</a>
           </td>
         </tr>
-        <tr data-art="MÖB-001" data-typ="MÖB" data-vkst="0" data-vkst-orig="0">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+        <tr data-art="MÖB-001" data-typ="MÖB" data-vkst="1" data-vkst-orig="1">
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">MÖB-001</td>
           <td class="marke">MÖB-001 </td>
           <td class="modell">HÄCKER systemat Hochschrank mit Pocket Doors ∕ Taschentüren, Innenauszügen und ausziehbarer Ablage, Holzdekor innen, grifflos</td>
           <td class="preis col-neu"><span class="cv"><span class="nd">–</span></span></td>
           <td class="preis col-markt"><span class="cv"><span class="nd">–</span></span></td>
-          <td class="status">Geprüft</td>
+          <td class="status info-check"><span class="info-miss" title="76 fehlende oder geschätzte Felder">76</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=M%C3%96B-001&entry.1437724510=&entry.1728118846=M%C3%96B-001+H%C3%84CKER+systemat+Hochschrank+mit+Pocket+Doors+%E2%88%95+Taschent%C3%BCren%2C+Innenausz%C3%BCgen+und+ausziehbarer+Ablage%2C+Holzdekor+innen%2C+grifflos&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/M%C3%96B-001.pdf" target="_blank">📄 Gerätedoku</a>
@@ -241,13 +250,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="MÜL-001" data-typ="MÜL" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">MÜL-001</td>
           <td class="marke">BLANCO </td>
           <td class="modell">SELECT II Compact 60/2</td>
           <td class="preis col-neu"><span class="cv">199,00 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 120–170 €<span class="ki">(KI)</span></span></td>
-          <td class="status">8 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="68 fehlende oder geschätzte Felder">68</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=M%C3%9CL-001&entry.1437724510=BLANCO&entry.1728118846=SELECT+II+Compact+60%2F2&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/M%C3%9CL-001.pdf" target="_blank">📄 Gerätedoku</a>
@@ -255,13 +264,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="MÜL-002" data-typ="MÜL" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">MÜL-002</td>
           <td class="marke">FRANKE </td>
           <td class="modell">Sorter 422</td>
           <td class="preis col-neu"><span class="cv">142,48–226,90 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 145–205 €<span class="ki">(KI)</span></span></td>
-          <td class="status">7 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="66 fehlende oder geschätzte Felder">66</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=M%C3%9CL-002&entry.1437724510=FRANKE&entry.1728118846=Sorter+422&entry.1324332801=ca.+462%E2%80%93468+%C3%97+475+%C3%97+320+mm+%28KI+%E2%80%93+aus+V1-Notiz%29" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/M%C3%9CL-002.pdf" target="_blank">📄 Gerätedoku</a>
@@ -269,13 +278,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="SPÜ-001" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-001</td>
           <td class="marke">BLANCO </td>
           <td class="modell">ANDANO</td>
           <td class="preis col-neu"><span class="cv">508,00 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">Neu ca. 400–500 €</span></td>
-          <td class="status">9 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="64 fehlende oder geschätzte Felder">64</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-001&entry.1437724510=BLANCO&entry.1728118846=ANDANO&entry.1324332801=540+%C3%97+440+mm" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-001.pdf" target="_blank">📄 Gerätedoku</a>
@@ -283,13 +292,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="SPÜ-002" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-002</td>
           <td class="marke">BLANCO </td>
           <td class="modell">CLARON 180-U</td>
           <td class="preis col-neu"><span class="cv">320,96 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 250–320 €<span class="ki">(KI)</span></span></td>
-          <td class="status">8 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="65 fehlende oder geschätzte Felder">65</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-002&entry.1437724510=BLANCO&entry.1728118846=CLARON+180-U&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-002.pdf" target="_blank">📄 Gerätedoku</a>
@@ -297,13 +306,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="SPÜ-003" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-003</td>
           <td class="marke">FRANKE </td>
           <td class="modell">Sirius S2D 611-62-NTH</td>
           <td class="preis col-neu"><span class="cv">189,50–230,90 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 190–225 €<span class="ki">(KI)</span></span></td>
-          <td class="status">11 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="70 fehlende oder geschätzte Felder">70</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-003&entry.1437724510=FRANKE&entry.1728118846=Sirius+S2D+611-62-NTH&entry.1324332801=620+%C3%97+500+mm" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-003.pdf" target="_blank">📄 Gerätedoku</a>
@@ -311,13 +320,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="SPÜ-004" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-004</td>
           <td class="marke">FRANKE </td>
           <td class="modell">GAX 40</td>
           <td class="preis col-neu"><span class="cv">149,00 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 137,90–293,18 €<span class="ki">(KI)</span></span></td>
-          <td class="status">10 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="74 fehlende oder geschätzte Felder">74</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-004&entry.1437724510=FRANKE&entry.1728118846=GAX+40&entry.1324332801=450+%C3%97+400+%C3%97+190+mm+%28KI+%E2%80%93+aus+V1-Notiz%29" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-004.pdf" target="_blank">📄 Gerätedoku</a>
@@ -325,13 +334,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="SPÜ-005" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-005</td>
           <td class="marke">FRANKE </td>
           <td class="modell">KBG 210-50</td>
           <td class="preis col-neu"><span class="cv">309,00–575,00 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 280–330 €<span class="ki">(KI)</span></span></td>
-          <td class="status">9 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="70 fehlende oder geschätzte Felder">70</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-005&entry.1437724510=FRANKE&entry.1728118846=KBG+210-50&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-005.pdf" target="_blank">📄 Gerätedoku</a>
@@ -339,13 +348,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="SPÜ-006" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-006</td>
           <td class="marke">FRANKE </td>
           <td class="modell">Sirius S2D 611-62 Carbon</td>
           <td class="preis col-neu"><span class="cv">189,50–245,00 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 200–240 €<span class="ki">(KI)</span></span></td>
-          <td class="status">11 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="70 fehlende oder geschätzte Felder">70</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-006&entry.1437724510=FRANKE&entry.1728118846=Sirius+S2D+611-62+Carbon&entry.1324332801=620+%C3%97+500+mm" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-006.pdf" target="_blank">📄 Gerätedoku</a>
@@ -353,69 +362,69 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="SPÜ-007" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-007</td>
           <td class="marke">hansgrohe </td>
           <td class="modell">S719-U500</td>
           <td class="preis col-neu"><span class="cv">385,95–771,24 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 385–515 €<span class="ki">(KI)</span></span></td>
-          <td class="status">9 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="70 fehlende oder geschätzte Felder">70</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-007&entry.1437724510=hansgrohe&entry.1728118846=S719-U500&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-007.pdf" target="_blank">📄 Gerätedoku</a>
             <a class="btn cloud" href="https://www.icloud.com/iclouddrive/0ecrpo7sLbWgOXVnyIyffVwOg" target="_blank">☁️ Daten</a>
           </td>
         </tr>
-        <tr data-art="SPÜ-008" data-typ="SPÜ" data-vkst="0" data-vkst-orig="0">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+        <tr data-art="SPÜ-008" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-008</td>
           <td class="marke">FRANKE </td>
           <td class="modell">Ariane AR 110-35</td>
           <td class="preis col-neu"><span class="cv"><span class="nd">–</span></span></td>
           <td class="preis col-markt"><span class="cv"><span class="nd">–</span></span></td>
-          <td class="status">19 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="74 fehlende oder geschätzte Felder">74</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-008&entry.1437724510=FRANKE&entry.1728118846=Ariane+AR+110-35&entry.1324332801=ca.+560+%C3%97+450+%C3%97+190+mm%0Aca.+530+%C3%97+420+mm%0Aca.+5+kg" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-008.pdf" target="_blank">📄 Gerätedoku</a>
             <a class="btn cloud" href="https://www.icloud.com/iclouddrive/05b8cBoMW4d8664IIjLGoO8yQ" target="_blank">☁️ Daten</a>
           </td>
         </tr>
-        <tr data-art="SPÜ-009" data-typ="SPÜ" data-vkst="0" data-vkst-orig="0">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+        <tr data-art="SPÜ-009" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-009</td>
           <td class="marke">BLANCO </td>
           <td class="modell">ANDANO 500-IF</td>
           <td class="preis col-neu"><span class="cv"><span class="nd">–</span></span></td>
           <td class="preis col-markt"><span class="cv"><span class="nd">–</span></span></td>
-          <td class="status">19 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="74 fehlende oder geschätzte Felder">74</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-009&entry.1437724510=BLANCO&entry.1728118846=ANDANO+500-IF&entry.1324332801=ca.+540+%C3%97+440+%C3%97+190+mm%0Aca.+510+%C3%97+410+mm%0Aca.+6+kg" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-009.pdf" target="_blank">📄 Gerätedoku</a>
             <a class="btn cloud" href="https://www.icloud.com/iclouddrive/0a6oknJFefUv0mAKsc-tKqmXg" target="_blank">☁️ Daten</a>
           </td>
         </tr>
-        <tr data-art="SPÜ-010" data-typ="SPÜ" data-vkst="0" data-vkst-orig="0">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+        <tr data-art="SPÜ-010" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-010</td>
           <td class="marke">BLANCO </td>
           <td class="modell">ETAGON 500-F</td>
           <td class="preis col-neu"><span class="cv"><span class="nd">–</span></span></td>
           <td class="preis col-markt"><span class="cv"><span class="nd">–</span></span></td>
-          <td class="status">19 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="74 fehlende oder geschätzte Felder">74</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-010&entry.1437724510=BLANCO&entry.1728118846=ETAGON+500-F&entry.1324332801=ca.+540+%C3%97+440+%C3%97+190+mm%0Aca.+510+%C3%97+410+mm%0Aca.+8+kg" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-010.pdf" target="_blank">📄 Gerätedoku</a>
             <a class="btn cloud" href="https://www.icloud.com/iclouddrive/07bkECGatEeBWrLJ2JLAjkgWA" target="_blank">☁️ Daten</a>
           </td>
         </tr>
-        <tr data-art="SPÜ-011" data-typ="SPÜ" data-vkst="0" data-vkst-orig="0">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+        <tr data-art="SPÜ-011" data-typ="SPÜ" data-vkst="1" data-vkst-orig="1">
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">SPÜ-011</td>
           <td class="marke">BLANCO </td>
           <td class="modell">ANDANO 400 IF</td>
           <td class="preis col-neu"><span class="cv"><span class="nd">–</span></span></td>
           <td class="preis col-markt"><span class="cv"><span class="nd">–</span></span></td>
-          <td class="status">19 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="74 fehlende oder geschätzte Felder">74</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=SP%C3%9C-011&entry.1437724510=BLANCO&entry.1728118846=ANDANO+400+IF&entry.1324332801=ca.+450+%C3%97+440+%C3%97+190+mm%0Aca.+420+%C3%97+410+mm%0Aca.+5+kg" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/SP%C3%9C-011.pdf" target="_blank">📄 Gerätedoku</a>
@@ -423,13 +432,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="ZÜB-001" data-typ="ZÜB" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">ZÜB-001</td>
           <td class="marke">Miele </td>
           <td class="modell">DUU 1000-2 UBS Umluft</td>
           <td class="preis col-neu"><span class="cv">325,00–392,00 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 330–380 €<span class="ki">(KI)</span></span></td>
-          <td class="status">5 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="69 fehlende oder geschätzte Felder">69</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=Z%C3%9CB-001&entry.1437724510=Miele&entry.1728118846=DUU+1000-2+UBS+Umluft&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/Z%C3%9CB-001.pdf" target="_blank">📄 Gerätedoku</a>
@@ -437,13 +446,13 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
           </td>
         </tr>
         <tr data-art="ZÜB-002" data-typ="ZÜB" data-vkst="1" data-vkst-orig="1">
-          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
+          <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">Erfassung</button></td>
           <td class="art">ZÜB-002</td>
           <td class="marke">Miele </td>
           <td class="modell">CSZL 1500 2er Pack EDST</td>
           <td class="preis col-neu"><span class="cv">80,49–127,00 €<span class="ki">(KI)</span></span></td>
           <td class="preis col-markt"><span class="cv">ca. 85–116 €<span class="ki">(KI)</span></span></td>
-          <td class="status">7 KI-Felder offen</td>
+          <td class="status info-check"><span class="info-miss" title="69 fehlende oder geschätzte Felder">69</span></td>
           <td class="actions">
             <a class="btn upload" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdc9WUo7vXetw_0J6_WCw2TU0dCr7LK1HzAGn7apJJWgALg/viewform?usp=pp_url&entry.1343619088=Z%C3%9CB-002&entry.1437724510=Miele&entry.1728118846=CSZL+1500+2er+Pack+EDST&entry.1324332801=%E2%80%93" target="_blank">📝 Formular bearbeiten</a>
             <a class="btn second" href="geraetedokus/Z%C3%9CB-002.pdf" target="_blank">📄 Gerätedoku</a>
@@ -465,7 +474,7 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
     <span class="legend-code">DRU</span><span class="legend-desc">Sonstiges Gerät</span>
   </div>
 </div>
-<div class="foot">Letztes Build: 12.06.2026 13:20</div>
+<div class="foot">Letztes Build: 12.06.2026 15:06</div>
 <script>
 // ── Passwortschutz ────────────────────────────────────────────────────────────
 (async function(){
@@ -484,18 +493,31 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
     alert('Falsches Passwort. Bitte erneut versuchen.');
   }
 })();
-// ── VK-Status cycling ────────────────────────────────────────────────────────
-const VKST_KEY='domus-vkst-v1';
-const VKST_LBL={'0':'–','1':'In Erfassung','2':'Bereit','3':'Online','4':'Verkauft'};
-const VKST_CLS={'0':'s1','1':'s1','2':'s2','3':'s3','4':'s4'};
+// ── Status (6 Phasen) ─────────────────────────────────────────────────────────
+const VKST_KEY='domus-vkst-v2';
+const VKST_LBL={'0':'–','1':'Erfassung','2':'Datensammlung','3':'Datenpflege','4':'Veröffentlichung','5':'Verkauf','6':'Abschluss'};
+const VKST_CLS={'0':'s1','1':'s1','2':'s2','3':'s3','4':'s4','5':'s5','6':'s6'};
+const VKST_NAMES=['','Erfassung','Datensammlung','Datenpflege','Veröffentlichung','Verkauf','Abschluss'];
+// Einmalige Migration vom alten 4-Stufen-Schema (v1): Erfassung→Erfassung,
+// Bereit→Veröffentlichung, Online→Verkauf, Verkauft→Abschluss.
+(function(){
+  try{
+    if(localStorage.getItem(VKST_KEY)) return;
+    const old=localStorage.getItem('domus-vkst-v1'); if(!old) return;
+    const m={'1':'1','2':'4','3':'5','4':'6'};
+    const o=JSON.parse(old); const n={};
+    for(const k in o){ n[k]=m[o[k]]||o[k]; }
+    localStorage.setItem(VKST_KEY,JSON.stringify(n));
+  }catch(e){}
+})();
 function loadVkst(){ try{ return JSON.parse(localStorage.getItem(VKST_KEY)||'{}'); }catch(e){ return {}; } }
 function saveVkst(o){ try{ localStorage.setItem(VKST_KEY,JSON.stringify(o)); }catch(e){} }
 function updateStats(){
-  const c={'1':0,'2':0,'3':0,'4':0};
+  const c={'1':0,'2':0,'3':0,'4':0,'5':0,'6':0};
   document.querySelectorAll('tr[data-art]').forEach(tr=>{ const v=tr.dataset.vkst||'1'; if(c[v]!==undefined) c[v]++; });
-  [1,2,3,4].forEach(i=>{ const el=document.getElementById('st'+i); if(el) el.textContent=c[i]+' '+['','In Erfassung','Bereit','Online','Verkauft'][i]; });
+  [1,2,3,4,5,6].forEach(i=>{ const el=document.getElementById('st'+i); if(el) el.textContent=c[i]+' '+VKST_NAMES[i]; });
 }
-const VKST_NEXT={'1':'2','2':'3','3':'4','4':'1'};
+const VKST_NEXT={'1':'2','2':'3','3':'4','4':'5','5':'6','6':'1'};
 function cycleVkst(btn){
   const tr=btn.closest('tr'); const art=tr.dataset.art;
   const val=VKST_NEXT[tr.dataset.vkst||'1']||'1';
@@ -552,7 +574,7 @@ function setFilter(kind,val,btn){
   filterTable();
 }
 function exportCSV(){
-  const hdr=['Art','Marke','Modell','Neupreis','Marktpreis','Zubehör (Preis)','VK-Status'];
+  const hdr=['Art','Marke','Modell','Neupreis','Marktpreis','Zubehör (Preis)','Status'];
   const lines=[hdr.map(h=>'"'+h+'"').join(';')];
   document.querySelectorAll('tr[data-art]').forEach(tr=>{
     if(tr.style.display==='none') return;
