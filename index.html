@@ -33,9 +33,11 @@ tbody tr:last-child td:last-child{border-radius:0 0 12px 0}
 .col-arrow{font-size:9px;opacity:.55;margin-left:3px}
 .col-abbr{display:none}
 table.collapse-neu th.col-neu,table.collapse-neu td.col-neu,
-table.collapse-markt th.col-markt,table.collapse-markt td.col-markt{width:1px;white-space:nowrap;padding-left:8px;padding-right:8px;overflow:hidden}
+table.collapse-markt th.col-markt,table.collapse-markt td.col-markt{width:34px;min-width:34px;max-width:34px;padding-left:6px;padding-right:6px;text-align:center;overflow:hidden}
+table.collapse-neu th.col-neu .col-txt,table.collapse-markt th.col-markt .col-txt{display:none}
+table.collapse-neu th.col-neu .col-abbr,table.collapse-markt th.col-markt .col-abbr{display:inline}
 table.collapse-neu td.col-neu .cv,table.collapse-markt td.col-markt .cv{display:none}
-table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{content:'–';color:#c7c7cc;font-size:12px}
+table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{content:'·';color:#c7c7cc}
 .ki{font-size:11px;color:#86868b}
 .nd{color:#c7c7cc}
 .zubehoer-preis{display:block;font-size:11px;color:#6e6e73;margin-top:3px}
@@ -104,7 +106,7 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
 </div>
 <div class="tbl-outer"><div class="tbl-wrap">
 <table>
-  <thead><tr><th></th><th>Artikel</th><th>Marke</th><th>Modell</th><th class="col-neu col-toggle" title="Neupreis – klicken zum Ein-/Ausklappen" onclick="toggleCol('neu')">Neupreis<span class="col-arrow">▾</span></th><th class="col-markt col-toggle" title="Marktpreis (Online) – klicken zum Ein-/Ausklappen" onclick="toggleCol('markt')">Marktpreis (Online)<span class="col-arrow">▾</span></th><th>KI-Check</th><th>Dokumentation &amp; Formular</th></tr></thead>
+  <thead><tr><th></th><th>Artikel</th><th>Marke</th><th>Modell</th><th class="col-neu col-toggle" title="Neupreis – klicken zum Ein-/Ausklappen" onclick="toggleCol('neu')"><span class="col-txt">Neupreis</span><span class="col-abbr">NP</span><span class="col-arrow">▾</span></th><th class="col-markt col-toggle" title="Marktpreis (Online) – klicken zum Ein-/Ausklappen" onclick="toggleCol('markt')"><span class="col-txt">Marktpreis (Online)</span><span class="col-abbr">MP</span><span class="col-arrow">▾</span></th><th>KI-Check</th><th>Dokumentation &amp; Formular</th></tr></thead>
   <tbody>
         <tr data-art="DAH-001" data-typ="DAH" data-vkst="1" data-vkst-orig="1">
           <td class="vkst-btn-td"><button class="vkst-btn s1" onclick="cycleVkst(this)">In Erfassung</button></td>
@@ -421,7 +423,7 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
 </table>
 </div></div>
 
-<div class="foot">Letztes Build: 12.06.2026 12:53</div>
+<div class="foot">Letztes Build: 12.06.2026 12:55</div>
 <script>
 // ── Passwortschutz ────────────────────────────────────────────────────────────
 (async function(){
