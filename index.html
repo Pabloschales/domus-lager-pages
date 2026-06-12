@@ -49,7 +49,12 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
 .btn.second{background:#5e5ce6} .btn.second:hover{background:#4a48b8}
 .btn.upload{background:#30b96b} .btn.upload:hover{background:#25975a}
 .btn.cloud{background:#636366} .btn.cloud:hover{background:#48484a}
-.foot{margin-top:24px;color:#86868b;font-size:12px;text-align:center}
+.legend-box{margin-top:24px;background:white;border-radius:12px;padding:16px 20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.legend-title{font-size:12px;font-weight:600;color:#6e6e73;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.legend-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px 24px}
+.legend-code{font-family:ui-monospace,monospace;font-weight:700;font-size:13px;color:#1d1d1f}
+.legend-desc{font-size:13px;color:#6e6e73}
+.foot{margin-top:16px;color:#86868b;font-size:12px;text-align:center}
 .tbl-outer{border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .tbl-wrap{overflow-x:auto}
 @media (max-width:900px){ td.actions{white-space:normal} .btn{margin-top:4px} .preis{min-width:120px} }
@@ -448,7 +453,19 @@ table.collapse-neu td.col-neu::after,table.collapse-markt td.col-markt::after{co
 </table>
 </div></div>
 
-<div class="foot">Letztes Build: 12.06.2026 13:16</div>
+<div class="legend-box">
+  <div class="legend-title">Artikel-Kürzel</div>
+  <div class="legend-grid">
+    <span class="legend-code">DAH</span><span class="legend-desc">Dunstabzugshaube</span>
+    <span class="legend-code">SPÜ</span><span class="legend-desc">Spüle</span>
+    <span class="legend-code">MÜL</span><span class="legend-desc">Müllsystem</span>
+    <span class="legend-code">ELK</span><span class="legend-desc">Unterhaltungselektronik</span>
+    <span class="legend-code">MÖB</span><span class="legend-desc">Möbel</span>
+    <span class="legend-code">ZÜB</span><span class="legend-desc">Zubehör</span>
+    <span class="legend-code">DRU</span><span class="legend-desc">Sonstiges Gerät</span>
+  </div>
+</div>
+<div class="foot">Letztes Build: 12.06.2026 13:17</div>
 <script>
 // ── Passwortschutz ────────────────────────────────────────────────────────────
 (async function(){
